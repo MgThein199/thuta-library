@@ -9,7 +9,14 @@ import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import Link from 'next/link';
 import { ChevronLeft, Calendar, User, Clock, Share2, Bookmark } from 'lucide-react';
-import { notFound } from 'next/navigation';
+import { getAllContent } from '@/lib/content';
+
+export async function generateStaticParams() {
+  const allContent = getAllContent();
+  return allContent.map((content) => ({
+    slug: content.slug,
+  }));
+}
 
 export default async function ContentPage({
   params,
