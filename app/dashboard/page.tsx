@@ -9,15 +9,12 @@ import Link from 'next/link';
 import { formatDistanceToNow } from 'date-fns';
 
 export default function DashboardPage() {
-  const [readingHistory, setReadingHistory] = useState<ReadingProgress[]>([]);
-  const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
-  const [activeTab, setActiveTab] = useState<'history' | 'bookmarks'>('history');
-
-  useEffect(() => {
+  const [readingHistory, setReadingHistory] = useState<ReadingProgress[]>(() => {
     const history = getReadingProgress();
-    setReadingHistory(Object.values(history).sort((a,b) => new Date(b.lastRead).getTime() - new Date(a.lastRead).getTime()));
-    setBookmarks(getBookmarks());
-  }, []);
+    return Object.values(history).sort((a, b) => new Date(b.lastRead).getTime() - new Date(a.lastRead).getTime());
+  });
+  const [bookmarks, setBookmarks] = useState<Bookmark[]>(() => getBookmarks());
+  const [activeTab, setActiveTab] = useState<'history' | 'bookmarks'>('history');
 
   const handleRemoveHistory = (id: string, e: React.MouseEvent) => {
     e.preventDefault();

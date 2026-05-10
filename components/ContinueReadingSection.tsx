@@ -9,15 +9,12 @@ import { formatDistanceToNow } from 'date-fns';
 import { cn } from '@/lib/utils';
 
 export default function ContinueReadingSection() {
-  const [items, setItems] = useState<ReadingProgress[]>([]);
-
-  useEffect(() => {
+  const [items, setItems] = useState<ReadingProgress[]>(() => {
     const data = getReadingProgress();
-    const sorted = Object.values(data).sort((a,b) => 
+    return Object.values(data).sort((a, b) => 
       new Date(b.lastRead).getTime() - new Date(a.lastRead).getTime()
     );
-    setItems(sorted);
-  }, []);
+  });
 
   const handleRemove = (id: string, e: React.MouseEvent) => {
     e.preventDefault();

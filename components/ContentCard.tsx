@@ -14,11 +14,7 @@ interface ContentCardProps {
 }
 
 export default function ContentCard({ item, index = 0 }: ContentCardProps) {
-  const [bookmarked, setBookmarked] = React.useState(false);
-
-  React.useEffect(() => {
-    setBookmarked(isBookmarked(item.id));
-  }, [item.id]);
+  const [bookmarked, setBookmarked] = React.useState(() => isBookmarked(item.id));
 
   const handleBookmark = (e: React.MouseEvent) => {
     e.preventDefault();
