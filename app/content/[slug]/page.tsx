@@ -21,15 +21,13 @@ export async function generateStaticParams() {
 
 export default async function ContentPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<{ type: string }>;
 }) {
   const { slug } = await params;
-  const { type } = await searchParams;
 
-  const data = getContentBySlug((type === 'book' ? 'book' : 'article'), slug);
+  // This route is obsolete, redirect or not found
+  notFound();
 
   if (!data) {
     notFound();
