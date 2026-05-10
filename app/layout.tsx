@@ -2,8 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css'; // Global styles
 
 export const metadata: Metadata = {
-  title: 'Myanmar DigitalLibrary',
-  description: 'Myanmar DigitalLibrary is a curated collection of articles and books, designed to provide a seamless reading experience. Explore our library and discover your next read today!',
+  title: 'Myanmar Digital Library',
+  description: 'Myanmar Digital Library is a curated collection of articles and books, designed to provide a seamless reading experience. Explore our library and discover your next read today!',
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
@@ -22,7 +22,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
               <span>System Live</span>
             </span>
             <span>● Fully Static MDX Environment</span>
-            <span>● မြန်မာ Library v2.0</span>
+            <span>● မြန်မာ Digital Library v2.0</span>
           </div>
           <div className="hidden sm:flex space-x-4">
             <span>Local Sync: Complete</span>

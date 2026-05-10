@@ -23,7 +23,7 @@ const Navbar = () => {
             M
           </div>
           <span className="text-lg font-bold tracking-tight uppercase text-[#1A1A1A]">
-            မြန်မာ <span className="text-blue-600">Library</span>
+            မြန်မာ <span className="text-blue-600">Digital Library</span>
           </span>
         </Link>
 

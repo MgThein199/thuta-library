@@ -27,7 +27,7 @@ export default async function HomePage() {
                 </span>
               </div>
               <h1 className="mb-4 text-3xl font-black tracking-tighter text-[#1A1A1A] md:text-5xl leading-tight uppercase">
-                မြန်မာ <span className="text-blue-600 underline decoration-blue-200 underline-offset-8">Digital</span> Library
+                မြန်မာ <span className="text-blue-600 underline decoration-blue-200 underline-offset-8">Digital</span> Digital Library
               </h1>
               <p className="mb-8 text-[15px] text-gray-500 max-w-sm font-medium">
                 Transforming learning with interactive lessons, quizzes, and real-time tracking. Fully static, fully offline compatible.
