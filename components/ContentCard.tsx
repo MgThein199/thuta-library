@@ -22,7 +22,7 @@ export default function ContentCard({ item, index = 0 }: ContentCardProps) {
       id: item.id,
       title: item.title,
       category: item.category,
-      url: `/content/${item.slug}?type=${item.type}`
+      url: `/content/${item.type}/${item.slug}`
     });
     setBookmarked(!bookmarked);
   };
@@ -34,7 +34,7 @@ export default function ContentCard({ item, index = 0 }: ContentCardProps) {
       transition={{ delay: index * 0.05 }}
       className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md"
     >
-      <Link href={`/content/${item.slug}?type=${item.type}`} className="flex flex-col">
+    <Link href={`/content/${item.type}/${item.slug}`} className="flex flex-col">
         <div className="relative h-40 w-full overflow-hidden bg-gray-100 border-b border-gray-100">
           <img
             src={`https://picsum.photos/seed/${item.id}/600/400`}
